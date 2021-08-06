@@ -17,10 +17,12 @@ The project follows the follow steps:
 
 Star schema and pyspark have been used for the implementation of our data model. Implementation details can be found in the Capstone Project Template.ipynb file.
 
-The ETL code is organized in a logical order where each code block represents a task or a number of related tasks. Necessary imports and configurations are done at the begining of the code. No further imports or installs are needed.
+The code in the Jupiter note is organized in a logical order where each code block represents a task or a number of related tasks. The ETL code is divided into a set of logical functions in the etl.py file.
+
+Necessary imports and configurations are done at the begining of the code. No further imports or installs are needed.
 
 Implementation code is divided into logical functions which can be found in etl.py file. To execute this ETL, you can run it in Terminal by executing "python3 etl.py".
 
-Some data quality checks are performed after processing and saving data. Processed data are saved in .parquet format in a separate folder in this project, namely *output*. Some partitioning is applied to the saved data to achieve better perfprmance during the data read operations.
+Some data quality checks are performed after processing and saving data. Processed data are saved in .parquet format in a separate folder in this project, namely *output*. Some partitioning is applied to the saved data to achieve better performance during the data read operations.
 
 The ETL has been tested and completed successfully before submission.
