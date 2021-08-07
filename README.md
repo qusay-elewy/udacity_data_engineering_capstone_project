@@ -15,6 +15,13 @@ The project follows the follow steps:
 * Step 4: Run ETL to Model the Data
 * Step 5: Complete Project Write Up
 
+Our data comes from different sources and in different formats described as follows:
+
+* I94 Immigration Data: This data comes from the US National Tourism and Trade Office. The data comes in .sas format, and it has information about entries made to the US in 2016. The data also comes with labels descriptions file which provides additional information about the main dataset. More about this dataset can be found here.
+* World Temperature Data: This dataset came from Kaggle, and it keeps track of the global weather information. The data is provided as a .csv file. More about this dataset can be found here.
+* U.S. City Demographic Data: This data is offered by OpenSoft, and it provides basic information about different city demographics. The data is also provided in .csv format. You can read more about it here.
+* Airport Code Table: This is a simple table of airport codes and corresponding cities. The data is also provided in .csv format. It comes from here.
+
 Star schema and pyspark have been used for the implementation of our data model. Implementation details can be found in the Capstone Project Template.ipynb file.
 
 The code in the Jupiter note is organized in a logical order where each code block represents a task or a number of related tasks. The ETL code is divided into a set of logical functions in the etl.py file.
