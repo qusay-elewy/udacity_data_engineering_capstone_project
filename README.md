@@ -15,13 +15,18 @@ The project follows the follow steps:
 * Step 4: Run ETL to Model the Data
 * Step 5: Complete Project Write Up
 
-Star schema and pyspark have been used for the implementation of our data model. Implementation details can be found in the Capstone Project Template.ipynb file.
+Our data comes from different sources and in different formats described as follows:
 
-The code in the Jupiter note is organized in a logical order where each code block represents a task or a number of related tasks. The ETL code is divided into a set of logical functions in the etl.py file.
+* I94 Immigration Data: This data comes from the US National Tourism and Trade Office. The data comes in .sas format, and it has information about entries made to the US in 2016. This dataset is relatively big as it contains several million records. The data also comes with labels descriptions file which provides additional information about the main dataset. More about this dataset can be found [here](https://render.githubusercontent.com/view/trade.gov/national-travel-and-tourism-office).
+* World Temperature Data: This dataset came from Kaggle, and it keeps track of the global weather information. The data is provided as a .csv file. More about this dataset can be found [here](https://render.githubusercontent.com/view/kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data).
+* U.S. City Demographic Data: This data is offered by OpenSoft, and it provides basic information about different city demographics. The data is also provided in .csv format. You can read more about it [here](https://render.githubusercontent.com/view/public.opendatasoft.com/explore/dataset/us-cities-demographics/export/).
+* Airport Code Table: This is a simple table of airport codes and corresponding cities. The data is also provided in .csv format. It comes from [here](https://render.githubusercontent.com/view/datahub.io/core/airport-codes#data).
 
-Necessary imports and configurations are done at the begining of the code. No further imports or installs are needed.
+Star schema and pyspark have been used for the implementation of our data model. The implementation details can be found in the [Capstone Project Template.ipynb](https://github.com/qusay-elewy/udacity_data_engineering_capstone_project/blob/main/Capstone%20Project%20Template.ipynb) file.
 
-Implementation code is divided into logical functions which can be found in etl.py file. To execute this ETL, you can run it in Terminal by executing "python3 etl.py".
+The code in the Jupiter note is organized in a logical order where each code block represents a task or a number of related tasks. The ETL code is divided into a set of  functions in the [etl.py](https://github.com/qusay-elewy/udacity_data_engineering_capstone_project/blob/main/etl.py) file. Necessary imports and configurations are done at the begining of the code; no further imports or installs are needed.
+
+To execute this ETL, it can be run in Terminal by executing "python3 etl.py" command, where etl.py is the name of our ETL code file.
 
 Some data quality checks are performed after processing and saving data. Processed data are saved in .parquet format in a separate folder in this project, namely *output*. Some partitioning is applied to the saved data to achieve better performance during the data read operations.
 
