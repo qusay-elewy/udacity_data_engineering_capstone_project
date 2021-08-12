@@ -1,3 +1,4 @@
+import configparser
 import pandas as pd
 import os
 import psycopg2
@@ -11,10 +12,25 @@ from pyspark.sql.functions import udf, month, year, dayofweek, dayofmonth, weeko
 from pyspark.sql.types import StringType, IntegerType, DoubleType, LongType, FloatType, DecimalType, DateType
 
 
-os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-8-openjdk-amd64"
-os.environ["PATH"] = "/opt/conda/bin:/opt/spark-2.4.3-bin-hadoop2.7/bin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-8-openjdk-amd64/bin"
-os.environ["SPARK_HOME"] = "/opt/spark-2.4.3-bin-hadoop2.7"
-os.environ["HADOOP_HOME"] = "/opt/spark-2.4.3-bin-hadoop2.7"
+#Reading configuration settings
+configParser = configparser.RawConfigParser()
+configParser.read("config.cfg")
+jave_home = configParser.get("OS", "JAVA_HOME")
+path = configParser.get("OS", "PATH")
+spark_home = configParser.get("OS", "SPARK_HOME")
+hadoop_home = configParser.get("OS", "HADOOP_HOME")
+spark_memory = configParser.get("Spark", "Memory")
+spark_broadcast_timeout = configParser.get("Spark", "Broadcast_Timeout")
+
+#Setting environment settings
+os.environ["JAVA_HOME"] = jave_home
+os.environ["PATH"] = path
+os.environ["SPARK_HOME"] = spark_home
+os.environ["HADOOP_HOME"] = hadoop_home
+#Increasing the memory usage on the drive to to 15GB to avoid running out of memory
+spark = SparkSession.builder.config("spark.driver.memory", spark_memory)\
+                            .config("spark.sql.broadcastTimeout", spark_broadcast_timeout)\
+                            .getOrCreate()
 
 
 """
