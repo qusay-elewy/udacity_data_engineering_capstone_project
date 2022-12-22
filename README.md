@@ -8,7 +8,7 @@ This is the Uacity Data Engineering Capstone Project, which presents a usecase w
 
 Questions like *is there a peak season for immigration?* *Do immigrants from warm countries prefer certain States versus those who are coming from cold countries?* *What is the percentage of immigrants with business visas versus those with tourist visas?* All these questions and many more can be easily answered once our data model is built and filled with data.
 
-The project follows the follow steps:
+The project follows the following steps:
 * Step 1: Scope the Project and Gather Data
 * Step 2: Explore and Assess the Data
 * Step 3: Define the Data Model
