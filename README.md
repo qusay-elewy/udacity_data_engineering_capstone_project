@@ -26,7 +26,7 @@ Star schema and pyspark have been used for the implementation of our data model.
 
 The code in the Jupiter note is organized in a logical order where each code block represents a task or a number of related tasks. The ETL code is divided into a set of  functions in the [etl.py](https://github.com/qusay-elewy/udacity_data_engineering_capstone_project/blob/main/etl.py) file. Necessary imports and configurations are done at the begining of the code; no further imports or installs are needed.
 
-To execute this ETL, user needs to enter *"python3 etl.py"* in Terminal, where *etl.py* is the name of our ETL code file.
+To execute this ETL, user needs to enter *python3 etl.py* in Terminal, where *etl.py* is the name of our ETL code file.
 
 Some data quality checks are performed after processing and saving data. Processed data are saved in .parquet format in a separate folder in this project, namely *output*. Some partitioning is applied to the saved data to achieve better performance during the data read operations.
 
