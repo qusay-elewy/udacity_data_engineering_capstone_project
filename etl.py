@@ -81,7 +81,7 @@ def get_season(x):
 
 def create_spark_session():
     """
-    Crates a spark session
+    Creates a spark session
     """
     
     #Increases memory usage on the drive to 15GB to avoid running out of memory, and
@@ -205,7 +205,7 @@ def process_demographics_data(spark, data_file, i94addr_df):
                                 .drop(i94addr_df.code)\
                                 .drop(demos_df.state)
 
-        #Create an id column to be used as a primary key
+        #Creates an id column to be used as a primary key
         #In a standard relational model, state_code and city could be used as composite primary key
         demos_df = demos_df.withColumn("id", monotonically_increasing_id())
         print("\n----- Geerating dim_Demographics sample data -----\n")
