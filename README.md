@@ -8,14 +8,14 @@ This is the Uacity Data Engineering Capstone Project, which presents a usecase w
 
 Questions like *is there a peak season for immigration?* *Do immigrants from warm countries prefer certain States versus those who are coming from cold countries?* *What is the percentage of immigrants with business visas versus those with tourist visas?* All these questions and many more can be easily answered once our data model is built and filled with data.
 
-The project follows the following steps:
+The project follows these steps:
 * Step 1: Scope the Project and Gather Data
 * Step 2: Explore and Assess the Data
 * Step 3: Define the Data Model
 * Step 4: Run ETL to Model the Data
 * Step 5: Complete Project Write Up
 
-Our data comes from different sources and in different formats described as follows:
+Our data comes from different sources and in different formats as described in the following:
 
 * I94 Immigration Data: This data comes from the US National Tourism and Trade Office. The data comes in .sas format, and it has information about entries made to the US in 2016. This dataset is relatively big as it contains several million records. The data also comes with labels descriptions file which provides additional information about the main dataset. More about this dataset can be found [here](https://render.githubusercontent.com/view/trade.gov/national-travel-and-tourism-office).
 * World Temperature Data: This dataset came from Kaggle, and it keeps track of the global weather information. The data is provided as a .csv file. More about this dataset can be found [here](https://render.githubusercontent.com/view/kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data).
@@ -26,7 +26,7 @@ Star schema and pyspark have been used for the implementation of our data model.
 
 The code in the Jupiter note is organized in a logical order where each code block represents a task or a number of related tasks. The ETL code is divided into a set of  functions in the [etl.py](https://github.com/qusay-elewy/udacity_data_engineering_capstone_project/blob/main/etl.py) file. Necessary imports and configurations are done at the begining of the code; no further imports or installs are needed.
 
-To execute this ETL, it can be run in Terminal by executing "python3 etl.py" command, where etl.py is the name of our ETL code file.
+To execute this ETL, user needs to enter *"python3 etl.py"* in Terminal, where *etl.py* is the name of our ETL code file.
 
 Some data quality checks are performed after processing and saving data. Processed data are saved in .parquet format in a separate folder in this project, namely *output*. Some partitioning is applied to the saved data to achieve better performance during the data read operations.
 
